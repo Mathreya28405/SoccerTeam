@@ -4,15 +4,14 @@ public class SoccerTeam {
     private int wins;
     private int losses;
     private int ties;
-    private int totalGames;
-    private int totalGoals;
+    private static int totalGames = 0;
+    private static int totalGoals = 0;
 
     public SoccerTeam() {
         wins = 0;
         losses = 0;
         ties = 0;
-        totalGames = 0;
-        totalGoals = 0;
+
 
     }
 
@@ -48,15 +47,20 @@ public class SoccerTeam {
         ties = 0;
     }
 
-    public int getGames() {
+    public static int getGames() {
         return totalGames;
     }
 
-    public int getGoals() {
+    public static int getGoals() {
         return totalGoals;
     }
 
-    public 
+    public static void startTournament() {
+        totalGames = 0;
+        totalGoals = 0;
+    }
+
+    
 
 
 
