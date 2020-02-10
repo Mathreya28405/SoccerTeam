@@ -61,10 +61,6 @@ public class SoccerTeam {
 
 
 
-    
-
-
-
     public static void main(String[] args) {
 	SoccerTeam transformers = new SoccerTeam();
 	SoccerTeam powerRangers = new SoccerTeam();
@@ -74,16 +70,64 @@ public class SoccerTeam {
 	powerRangers.played(transformers, 5, 7);
 	ninjaTurtles.played(avengers, 9, 4);
 	transformers.played(avengers, 3, 2);
-	powerRangers.played(ninjaTurtles, 6, 8);
+	powerRangers.played(ninjaTurtles, 6, 6);
 
-	System.out.println(powerRangers.numPoints());
-	System.out.println(transformers.numPoints());
-	System.out.println(ninjaTurtles.numPoints());
-	System.out.println(avengers.numPoints());
-	System.out.println(getGames());
-	System.out.println(getGoals());
+	System.out.println(powerRangers.numPoints()); //1
+	System.out.println(transformers.numPoints()); //6
+	System.out.println(ninjaTurtles.numPoints()); //4
+	System.out.println(avengers.numPoints()); //0
+	System.out.println(getGames()); //4
+	System.out.println(getGoals()); //42
+
+    /* transformers.reset();
+    powerRangers.reset();
+    ninjaTurtles.reset();
+    avengers.reset(); */
 
 	transformers.played(ninjaTurtles, 1, 0);
 	powerRangers.played(avengers, 10, 12);
+	transformers.played(powerRangers, 7, 7);
+	ninjaTurtles.played(avengers, 4, 3);
+
+	System.out.println(powerRangers.numPoints()); //1
+	System.out.println(transformers.numPoints()); //4
+	System.out.println(ninjaTurtles.numPoints()); //3
+	System.out.println(avengers.numPoints()); //3
+	System.out.println(getGames()); //4 or 8
+	System.out.println(getGoals()); //44 or 86
     }
+
+    /*
+Output for first tournament:
+1
+6
+4
+0
+4
+42
+
+Output for second tournament:
+2
+10
+7
+3
+8
+86
+
+Output for second tournament after reset method is called:
+1
+4
+3
+3
+8
+86
+
+Output if only the second tournament is executed:
+1
+4
+3
+3
+4
+44
+     */
 }
