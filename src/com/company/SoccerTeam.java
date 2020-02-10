@@ -17,10 +17,9 @@ public class SoccerTeam {
 
     public void played(SoccerTeam other, int myScore, int otherScore) {
         SoccerTeam original = new SoccerTeam();
-        this.totalGames++;
-        other.totalGames++;
-        this.totalGoals += myScore;
-        other.totalGoals += otherScore;
+        totalGames++;
+        totalGoals+= myScore;
+        totalGoals += otherScore;
 
         if (myScore > otherScore) {
             this.wins++;
@@ -60,11 +59,31 @@ public class SoccerTeam {
         totalGoals = 0;
     }
 
+
+
     
 
 
 
     public static void main(String[] args) {
-	// write your code here
+	SoccerTeam transformers = new SoccerTeam();
+	SoccerTeam powerRangers = new SoccerTeam();
+	SoccerTeam ninjaTurtles = new SoccerTeam();
+	SoccerTeam avengers = new SoccerTeam();
+
+	powerRangers.played(transformers, 5, 7);
+	ninjaTurtles.played(avengers, 9, 4);
+	transformers.played(avengers, 3, 2);
+	powerRangers.played(ninjaTurtles, 6, 8);
+
+	System.out.println(powerRangers.numPoints());
+	System.out.println(transformers.numPoints());
+	System.out.println(ninjaTurtles.numPoints());
+	System.out.println(avengers.numPoints());
+	System.out.println(getGames());
+	System.out.println(getGoals());
+
+	transformers.played(ninjaTurtles, 1, 0);
+	powerRangers.played(avengers, 10, 12);
     }
 }
